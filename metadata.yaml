@@ -1,0 +1,35 @@
+_repo: Tales-of-Aztlan--The-Romance-of-a-Hero-of-Our-Late-Spanish-American-War-Incidents-of-Interest-__4294
+_version: 0.0.1
+creator:
+  author:
+    agent_name: Hartmann, George
+    alias: Hartmann, Henry August George
+    birthdate: 1852
+    deathdate: 1934
+    gutenberg_agent_id: '1434'
+    url: http://www.gutenberg.org/2009/agents/1434
+description: ''
+gutenberg_bookshelf: Spanish American War
+gutenberg_issued: '2003-07-01'
+gutenberg_type: Text
+identifiers:
+  gutenberg: '4294'
+language: en
+publisher: Project Gutenberg
+rights: Public domain in the USA.
+rights_url: http://creativecommons.org/about/pdm
+subjects:
+- !lcsh 'Western stories'
+- !lcsh 'Short stories, American'
+- !lcsh 'Spanish-American War, 1898 -- Fiction'
+- !lcc 'PS'
+- GITenberg
+tableOfContents: A frail bark tossed on life's tempestuous sea -- A perilous journey
+  -- The mystery of a smoking ruin; Stalking a warrior; The ambush -- A strange land
+  and stranger people -- On the Rio Grande; An abstract of the author's genealogy
+  of maternal lineage -- Indian lore; The wily Navajo -- The fight in the sand hills;
+  The phantom dog -- With the Navajo tribe -- In Arizona -- At the shrine of a "Sphinx
+  of Aztlan"; An uncanny stone; The birth of Arizona; A royal fiasco; A maid of Yavapai.
+title: Tales of Aztlan; The Romance of a Hero of Our Late Spanish-American War, Incidents
+  of Interest from the Life of a Western Pioneer and Other Tales
+url: http://www.gutenberg.org/ebooks/4294
