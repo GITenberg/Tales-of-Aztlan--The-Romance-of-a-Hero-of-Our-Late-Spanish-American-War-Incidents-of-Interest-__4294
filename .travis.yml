@@ -1,0 +1,61 @@
+sudo: required
+dist: trusty
+language: ruby
+
+before_install:
+before_install:
+- gem install asciidoctor -v 1.5.2
+- gem install tilt
+- sudo pip install git+https://github.com/gitenberg-dev/gitberg
+- sudo pip install pillow
+- sudo pip install cssutils
+- sudo pip install docutils
+- sudo pip install roman
+- sudo pip install git+https://github.com/gitenberg-dev/pg-epubmaker
+script:
+- VERSION=`ruby -e "require 'yaml'; meta = YAML.load_file('metadata.yaml'); puts meta['_version'];"`
+- git clone https://github.com/gitenberg-dev/asciidoctor-htmlbook.git
+- sudo pip install -r asciidoctor-htmlbook/gitberg-machine/requirements.txt
+
+- /usr/bin/python -c "from gitenberg import travis; travis.build_epub()"
+- ebook-convert book.epub book.mobi
+- xvfb-run ebook-convert book.epub book.pdf
+branches:
+  only:
+  - master
+notifications:
+  webhooks:
+    urls:
+      - https://unglue.it/api/travisci/webhook
+    on_success: always
+    on_failure: never
+    on_start: never
+deploy:
+  skip_cleanup: true
+  provider: releases
+  api_key:
+    secure: iCHbDwWUEKOXkUaR1XaCzQh6Q2Fn7l4dI/myhTODzD9dSR1NZdvUvL4s3FTN8lZzqYGcfLamTgpta2IO7HF9oVnxj74IQ1D306aD+GBxQKKlrYIA26mp/w7a6gRDvchJYGt+3OPhZvMhKPF2v61n5RofcKeA0/MoQaPfoe55jOMF5wCi3xcFhXxuPT5QpHGH4i0VoiDuJVT+uq+E4SoAnRmgujwPdrLasgxgOo6heMZWeBXvvZ7JUHOg4UA12qG1UksESg33kWMytshNrXpwimrvGJgJEeUuPyyx52ZGNG3Gz9PnGHWFcxz4IQ39kn7ylyGWabeKiw+45CWkoq1XHLWKOeFgCauZx+jDzUdUvFifOqoBO0X11T4ghZA+P7T8jOtjWG9DWLmoC7it1RKyD3g8A+ls1UPYlWNxEAx127+P+WeDc/esg20R2C4CMwMjepXT3t1GQnLD85F78kgdirK6kYbGtti3gF7fKXfDj1M5B90SPxITiq23Wm66g3IQzyr91Wxapj09YidDPIrVeUnDrgSqYqoiRWQoIcxRD0yXMbA2TGgMMAZbhcseY+m/YmpvqhzyvNwm4/oR3/b68w55cNN5GBZUYmNNeRbgTMlLPLmu2ncJAy0CDz8nyM3xLG222XLo4CVP2Xt7/ySLrJnQhpEQoah9vj320dKzHi4=
+  file:
+    - book.epub
+    - book.mobi
+    - book.pdf
+  "on":
+    repo: GITenberg/Tales-of-Aztlan--The-Romance-of-a-Hero-of-Our-Late-Spanish-American-War-Incidents-of-Interest-__4294
+addons:
+  apt:
+    packages:
+    - xsltproc
+    - xvfb
+    - calibre
+    - python-pip
+    - git
+    - python-dev
+    - libjpeg-dev
+    - libpng-dev
+    - libfreetype6
+    - libfreetype6-dev
+    - zlib1g-dev
+    - python-lxml
+    - libxml2-dev
+    - libxslt1-dev
+    - tidy
