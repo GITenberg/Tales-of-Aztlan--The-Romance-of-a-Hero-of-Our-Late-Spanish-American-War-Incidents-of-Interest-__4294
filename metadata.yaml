@@ -1,5 +1,8 @@
 _repo: Tales-of-Aztlan--The-Romance-of-a-Hero-of-Our-Late-Spanish-American-War-Incidents-of-Interest-__4294
-_version: 0.1.0
+_version: 0.2.0
+covers:
+- cover_type: generated
+  image_path: cover.png
 creator:
   author:
     agent_name: Hartmann, George
@@ -9,6 +12,8 @@ creator:
     gutenberg_agent_id: '1434'
     url: http://www.gutenberg.org/2009/agents/1434
 description: ''
+edition_identifiers:
+  edition_id: http://www.gutenberg.org/ebooks/4294#Tales-of-Aztlan--The-Romance-of-a-Hero-of-Our-Late-Spanish-American-War-Incidents-of-Interest-_
 gutenberg_bookshelf: Spanish American War
 gutenberg_issued: '2003-07-01'
 gutenberg_type: Text
